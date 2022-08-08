@@ -6,46 +6,10 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body><script> 
-function validate()
-{ 
-     var first_name = document.form.first_name.value;
-     var email = document.form.email.value;
-     var username = document.form.username.value; 
-     var password = document.form.password.value;
-     var last_name= document.form.last_name.value;
-     
-     if (first_name==null || first_name=="")
-     { 
-     alert("Name can't be blank"); 
-     return false; 
-     }
-     else if (last_name==null || last_name=="")
-     { 
-     alert("Name can't be blank"); 
-     return false; 
-     }
-     else if (email==null || email=="")
-     { 
-     alert("Email can't be blank"); 
-     return false; 
-     }
-     else if (username==null || username=="")
-     { 
-     alert("Username can't be blank"); 
-     return false; 
-     }
-     else if(password.length<6)
-     { 
-     alert("Password must be at least 6 characters long."); 
-     return false; 
-     } 
-         } 
- } 
-</script> 
+<body>
 </head>
 <body>
-    <form name="form" action="register" method="post" onsubmit="return validate()">
+    <form name="form" action="register" method="post">
         <table>
          <tr>
          <td>FirstName</td>

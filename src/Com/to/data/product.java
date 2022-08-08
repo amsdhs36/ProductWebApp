@@ -2,7 +2,11 @@ package Com.to.data;
 
 
 
-public class product {
+public class product implements java.io.Serializable{
+/**
+	 *
+	 */
+private static final long serialVersionUID = 1L;
 private int p_id;
 private String pname;
 private String p_desc;
@@ -21,10 +25,9 @@ public product(int p_id, String pname, String p_desc, float price) {
 public int getP_id() {
 	return p_id;
 }
-public int setP_id(int p_id) {
+public void setP_id(int p_id) {
 	this.p_id = p_id;
 }
-
 public String getPname() {
 	return pname;
 }

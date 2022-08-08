@@ -64,13 +64,7 @@ public class productData extends HttpServlet {
 						   pdata.setPname(rs.getString(2));
 						   pdata.setP_desc(rs.getString(3));
 						   pdata.setPrice(rs.getFloat(4));
-					  /* p_id=rs.getInt(1);
-					   String pname = rs.getString(2);
-					   String p_desc = rs.getString(3);
-					   float price = rs.getFloat(4);
-					   product pdata=new product(p_id,pname,p_desc,price);
-					  					   
-					   request.setAttribute("pdata", pdata); */
+					 
 					HttpSession session=request.getSession();
 					session.setAttribute("pdata", pdata);
 				       RequestDispatcher rd=request.getRequestDispatcher("productdata.jsp");

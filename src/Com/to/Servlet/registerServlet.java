@@ -43,9 +43,15 @@ public class registerServlet extends HttpServlet {
          String email = request.getParameter("email");
          String username = request.getParameter("username");   
  	    String password = request.getParameter("password");
-         
+         if(first_name.isEmpty()|| last_name.isEmpty()|| email.isEmpty()||username.isEmpty()|| password.isEmpty())
+        
+        	 {
+        	 RequestDispatcher req=request.getRequestDispatcher("register.jsp");
+        	 request.setAttribute("Message", "Please enter complete details");
+        	 req.forward(request, response);
+        	 }
+         else{
          User user = new User();
-     
          user.setFirst_name(first_name);
          user.setLast_name(last_name);
          user.setUsername(username);
@@ -75,7 +81,7 @@ public class registerServlet extends HttpServlet {
             rd.forward(request, response);
            
          }
-     } catch (Exception ex) {
+     } }catch (Exception ex) {
 			ex.printStackTrace();
 	    }
       out.close();

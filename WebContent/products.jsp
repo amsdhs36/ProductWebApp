@@ -8,10 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<br>${emessage}
+
 <a href="home.jsp">Back to home page </a>
+<a href="product">Product List</a>
 <h1>Welcome to products page</h1>
-                 
+      
+      <br>${emessage}           
   <form action="productData" method="post" >  
         Product ID:<input type="text" name="p_id"/><br/><br/>  
         <input type="submit" value="Get Details"/>

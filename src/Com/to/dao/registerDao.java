@@ -14,6 +14,7 @@ public class registerDao {
    PreparedStatement ps=null;
  
    try { 
+	   
 	con3=dbaseConnect.createConnection();
 	String query="insert into user"+ "(first_name,last_name,email,username,password) values" +
 		    "(?, ?, ?, ?, ?);";
