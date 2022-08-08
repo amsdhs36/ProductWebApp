@@ -1,6 +1,7 @@
 package Com.to.Servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -31,23 +32,23 @@ public class productServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		response.setContentType("text/html");
-	//	PrintWriter out=response.getWriter();
+		PrintWriter out=response.getWriter();
 		Connection con2=dbaseConnect.createConnection();
 		List<product>list=new ArrayList<>();
 		
-		 
 			   try {
-				list=productdao.queryProduct(con2);
+				list=productdao.queryProduct(con2);   
+			    request.setAttribute("productList", list); 	
+	            RequestDispatcher rd=request.getRequestDispatcher("productlist.jsp");
+	            rd.forward(request, response);
 			   } catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			    
-		   request.setAttribute("productList", list); 	
-	       RequestDispatcher rd=request.getRequestDispatcher("products.jsp");
-	       rd.forward(request, response);
-	    
-	}
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+			   }
+			   finally {
+	           out.close();
+	}}
+	
 }	
 	
 	

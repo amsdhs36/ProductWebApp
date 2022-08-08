@@ -30,21 +30,8 @@ public class productdao {
 		}
 		return list;
 }
-	/*public static product findProduct(Connection conn, int p_id) throws SQLException {
-		String query = "Select p_id, pname, price,p_desc from Product where p_id=?";
-
-		PreparedStatement ps = conn.prepareStatement(query);
-		ps.setInt(1, p_id);
-
-		ResultSet rs = ps.executeQuery();
-		while (rs.next()) {
-			String pname = rs.getString("pname");
-			String p_desc = rs.getString("p_desc");
-			float price = rs.getFloat("price");
-			product product = new product(p_id, p_name,p_desc, price);
-			return product;
-		}
-		return null;
-	}*/
-}
 	
+}	 
+			
+	
+

@@ -8,6 +8,7 @@
 </head>
 <body>
 <br>${message}
+<br>${msg}
 
 <h2>Please enter your login credential</h2>
 <form action="loginpage" method="post" >  

@@ -10,14 +10,14 @@ import Com.to.data.User;
 public class registerDao {
 	public String registerUser(User user)throws SQLException{
 		
-   Connection con = null;
+   Connection con3 = null;
    PreparedStatement ps=null;
  
    try { 
-	con=dbaseConnect.createConnection();
+	con3=dbaseConnect.createConnection();
 	String query="insert into user"+ "(first_name,last_name,email,username,password) values" +
 		    "(?, ?, ?, ?, ?);";
-	ps=con.prepareStatement(query);
+	ps=con3.prepareStatement(query);
    
    ps.setString(1, user.getFirst_name());
    ps.setString(2, user.getLast_name());
@@ -32,10 +32,11 @@ public class registerDao {
 	       }
       catch (SQLException e) {
 	 e.printStackTrace();
- }
+     }  
 	return "Something went wrong";
 	
 	}
-	
+	 
+	 
  
  }
